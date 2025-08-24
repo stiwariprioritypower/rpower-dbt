@@ -1,0 +1,55 @@
+version: 2
+
+sources:
+  - name: ercot
+    database: ANALYTICS_DEV_RAW_DB
+    schema: ERCOT_SNOW_API      
+    tables:
+      - name: np6_905_cd
+  - name: kristen
+    database: RAW_DB
+    schema: MANUAL_UPLOADS
+    quoting:
+      identifier: true
+    tables:
+      - name: 301924_DATA
+      - name: 301889_DATA
+  - name: apollo
+    database: RAW_DB
+    schema: MANUAL_UPLOADS
+    tables:
+      - name: apollo_northside_water_a
+      - name: apollo_watergen_a
+  - name: lhoist
+    database: RAW_DB
+    schema: MANUAL_UPLOADS
+    tables:
+      - name: lhoist_data
+  - name: geus
+    database: RAW_DB
+    schema: MANUAL_UPLOADS
+    tables:
+      - name: geus_fsti
+  - name: gvec
+    database: RAW_DB
+    schema: MANUAL_UPLOADS
+    tables:
+      - name: gvec_smiley_ps_kmci
+  - name: transportation 
+    database: RAW_DB
+    schema: MANUAL_UPLOADS
+    tables:
+      - name: transportation_resources_loa_intervals
+  - name: scada 
+    database: ANALYTICS_DEV_RAW_DB
+    schema: SCADA_WAVESTREET_API
+    tables:
+      - name: kristen_scada_export
+      - name: metox_scada_export
+
+  
+  
+  
+  
+  
+  

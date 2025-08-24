@@ -1,0 +1,112 @@
+version: 2
+models:
+  - name: dim_site
+    description: "Marts model for Sites"
+    columns:
+      - name: site_pk
+        description: "The primary key for this table"
+        data_tests:
+          - unique
+          - not_null
+  
+  - name: dim_date
+    description: "Marts model for Dates"
+    columns:
+      - name: date_pk
+        description: "The primary key for this table"
+        data_tests:
+          - unique
+          - not_null
+
+  - name: dim_time_interval
+    description: "Marts model for Intervals"
+    columns:
+      - name: time_interval_pk
+        description: "The primary key for this table"
+        data_tests:
+          - unique
+          - not_null
+
+  - name: fact_site_price_history
+    description: "Marts model for Price History"
+    columns:
+      - name: site_price_history_pk
+        description: "The primary key for this table"
+        data_tests:
+          - unique
+          - not_null
+      - name: date_fk
+        data_tests:
+          - relationships:
+              to: ref('dim_date')
+              field: date_pk
+      - name: site_fk
+        data_tests:
+          - relationships:
+              to: ref('dim_site')
+              field: site_pk
+      - name: time_interval_fk
+        data_tests:
+          - relationships:
+              to: ref('dim_time_interval')
+              field: time_interval_pk
+  - name: fact_meter_usage_history
+    description: "Marts model for Price History"
+    columns:
+      - name: meter_history_pk
+        description: "The primary key for this table"
+        data_tests:
+          - unique
+          - not_null
+      - name: date_fk
+        data_tests:
+          - relationships:
+              to: ref('dim_date')
+              field: date_pk
+      - name: meter_fk
+        data_tests:
+          - relationships:
+              to: ref('dim_meter')
+              field: meter_pk
+      - name: time_interval_fk
+        data_tests:
+          - relationships:
+              to: ref('dim_time_interval')
+              field: time_interval_pk
+      - name: site_fk
+        data_tests:
+          - relationships:
+              to: ref('dim_site')
+              field: site_pk
+
+  - name: fact_generator_production_history
+    description: "Marts model for Generator Production History"
+    columns:
+      - name: scada_export_pk
+        description: "The primary key for this table"
+        data_tests:
+          - unique
+          - not_null
+      - name: date_fk
+        data_tests:
+          - relationships:
+              to: ref('dim_date')
+              field: date_pk
+      - name: time_interval_fk
+        data_tests:
+          - relationships:
+              to: ref('dim_time_interval')
+              field: time_interval_pk
+      - name: site_fk
+        data_tests:
+          - relationships:
+              to: ref('dim_site')
+              field: site_pk
+  - name: dim_meter
+    description: "Marts model for Price History"
+    columns:
+      - name: meter_pk
+        description: "The primary key for this table"
+        data_tests:
+          - unique
+          - not_null

@@ -1,0 +1,96 @@
+version: 2
+models:
+  - name: stg_ercot_np6_905_cd
+    description: "Staging model for ERCOT pricing data"
+    columns:
+      - name: site_price_history_pk
+        description: "The primary key for this table"
+        data_tests:
+          - unique
+          - not_null
+  - name: stg_kristen_301924_data
+    description: "Staging model for the raw meter data for meter 301924. Data is loaded manually via CSV."
+    columns:
+      - name: meter_history_pk
+        description: "The primary key for this table represents a measurement for a meter at a given date, hour, and time interval (15 minutes)"
+        data_tests:
+          - unique
+          - not_null
+  - name: stg_kristen_301889_data
+    description: "Staging model for the raw meter data for meter 301889. Data is loaded manually via CSV."
+    columns:
+      - name: meter_history_pk
+        description: "The primary key for this table represents a measurement for a meter at a given date, hour, and time interval (15 minutes)"
+        data_tests:
+          - unique
+          - not_null
+  - name: stg_apollo_northside_water_a
+    description: "Staging model for the raw meter data for meter Apollo Northside_Water_A. Data is loaded manually via CSV."
+    columns:
+      - name: meter_history_pk
+        description: "The primary key for this table represents a measurement for a meter at a given date, hour, and time interval (15 minutes)"
+        data_tests:
+          - unique
+          - not_null
+  - name: stg_apollo_watergen_a
+    description: "Staging model for the raw meter data for meter Apollo Watergen_A. Data is loaded manually via CSV."
+    columns:
+      - name: meter_history_pk
+        description: "The primary key for this table represents a measurement for a meter at a given date, hour, and time interval (15 minutes)"
+        data_tests:
+          - unique
+          - not_null
+  - name: stg_geus_fsti
+    description: "Staging model for the raw meter data for meter Geus fsti. Data is loaded manually via CSV."
+    columns:
+      - name: meter_history_pk
+        description: "The primary key for this table represents a measurement for a meter at a given date, hour, and time interval (15 minutes)"
+        data_tests:
+          - unique
+          - not_null
+  - name: stg_gvec_smiley_ps_kmci
+    description: "Staging model for the raw meter data for meter Gvec. Data is loaded manually via CSV."
+    columns:
+      - name: meter_history_pk
+        description: "The primary key for this table represents a measurement for a meter at a given date, hour, and time interval (15 minutes)"
+        data_tests:
+          - unique
+          - not_null
+  - name: stg_lhoist_data
+    description: "Staging model for the raw meter data for meter lhoist. Data is loaded manually via CSV."
+    columns:
+      - name: meter_history_pk
+        description: "The primary key for this table represents a measurement for a meter at a given date, hour, and time interval (15 minutes)"
+        data_tests:
+          - unique
+          - not_null
+  - name: stg_transportation_resources_loa_intervals
+    description: "Staging model for the raw meter data for meter Transportation. Data is loaded manually via CSV."
+    columns:
+      - name: meter_history_pk
+        description: "The primary key for this table represents a measurement for a meter at a given date, hour, and time interval (15 minutes)"
+        data_tests:
+          - unique
+          - not_null
+  - name: stg_kristen_scada_export
+    description: "Staging model for the raw scada data for kristen generators. Data is loaded manually via CSV."
+    columns:
+      - name: scada_export_pk
+        description: "The primary key for this table represents a measurement for a meter at a given date, hour, and time interval (15 minutes)"
+        data_tests:
+          - unique
+          - not_null
+  - name: stg_metox_scada_export
+    description: "Staging model for the raw scada data for metox generators. Data is loaded manually via CSV."
+    columns:
+      - name: scada_export_pk
+        description: "The primary key for this table represents a measurement for a meter at a given date, hour, and time interval (15 minutes)"
+        data_tests:
+          - unique
+          - not_null
+
+          
+  
+
+
+  

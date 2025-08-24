@@ -1,0 +1,62 @@
+
+version: 2
+models:
+  - name: int_site
+    description: "Intermediate model for Sites"
+    columns:
+      - name: site_pk
+        description: "The primary key for this table"
+        data_tests:
+          - unique
+          - not_null
+
+  - name: int_date
+    description: "Intermediate model for Dates"
+    columns:
+      - name: date_pk
+        description: "The primary key for this table"
+        data_tests:
+          - unique
+          - not_null
+
+  - name: int_time_interval
+    description: "Intermediate model for Intervals"
+    columns:
+      - name: time_interval_pk
+        description: "The primary key for this table"
+        data_tests:
+          - unique
+          - not_null
+
+  - name: int_site_price_history
+    description: "Intermediate model for Price History"
+    columns:
+      - name: site_price_history_pk
+        description: "The primary key for this table"
+        data_tests:
+          - unique
+          - not_null
+  - name: int_meter_usage_history
+    description: "Intermediate model for Meter Usage data."
+    columns:
+      - name: meter_history_pk
+        description: "The primary key for this table"
+        data_tests:
+          - unique
+          - not_null
+  - name: int_meter
+    description: "Intermediate model for data that describes Meters."
+    columns:
+      - name: meter_pk
+        description: "The primary key for this table represents a unique Meter"
+        data_tests:
+          - unique
+          - not_null
+  - name: int_generator_production_history
+    description: "Intermediate model for data for generator production history."
+    columns:
+      - name: scada_export_pk
+        description: "The primary key for this table"
+        data_tests:
+          - unique
+          - not_null
